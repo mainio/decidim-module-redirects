@@ -52,6 +52,8 @@
           </tbody>
         </table>
       </div>
+
+      <%= decidim_paginate @redirections %>
     <% else %>
       <div class="text-center">
         <%= t ".no_records_html", button_link: new_redirection_path, button_name: t("decidim.redirects.admin.actions.new_redirection") %>

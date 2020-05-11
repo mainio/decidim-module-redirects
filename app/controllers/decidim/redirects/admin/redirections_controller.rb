@@ -4,11 +4,13 @@ module Decidim
   module Redirects
     module Admin
       class RedirectionsController < Admin::ApplicationController
+        include Paginable
+
         helper_method :collection
 
         def index
           enforce_permission_to :read, :redirection
-          @redirections = collection
+          @redirections = paginate(collection)
         end
 
         def new
@@ -76,7 +78,7 @@ module Decidim
         private
 
         def redirections
-          @redirections ||= OrganizationRedirections.new(current_organization)
+          @redirections ||= OrganizationRedirections.new(current_organization).query
         end
 
         alias collection redirections
