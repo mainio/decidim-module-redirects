@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+# Keep this in the lib folder instead of the app folder to avoid the following
+# type of errors when classes are reloaded:
+#   A copy of Decidim::Redirects::RedirectionMiddleware has been removed from
+#   the module tree but is still active!
 module Decidim
   module Redirects
     class RedirectionMiddleware
