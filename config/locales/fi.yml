@@ -1,0 +1,56 @@
+fi:
+  activemodel:
+    attributes:
+      redirection:
+        external: Ulkoinen
+        parameters: Parametrit
+        path: Polku
+        priority: Prioriteetti
+        target: Kohde
+    errors:
+      models:
+        redirection:
+          attributes:
+            path:
+              invalid_format: 'virheellinen polun muoto, polun tulee alkaa kauttaviivalla (/) ja sen tulee seurata URL-osoitteille määrättyjä muotovaatimuksia'
+            target:
+              invalid_format_local: 'virheellinen paikallisen polun muoto, polun tulee alkaa kauttaviivalla (/) ja sen tulee seurata URL-osoitteille määrättyjä muotovaatimuksia'
+              invalid_format_external: 'virheellinen ulkoisen kohteen muoto, tulee olla kokonainen URL-osoite kuten "https://www.decidim.org/blog"'
+  decidim:
+    redirects:
+      admin:
+        actions:
+          back: Takaisin
+          cancel: Peruuta
+          new_redirection: Uusi uudelleenohjaus
+        models:
+          redirections:
+            fields:
+              path: Polku
+              priority: Prioriteetti
+              target: Kohde
+        redirections:
+          create:
+            error: Uudelleenohjauksen luonti epäonnistui.
+            success: Uudelleenohjauksen luonti onnistui.
+          destroy:
+            success: Uudelleenohjauksen poisto onnistui.
+          edit:
+            save: Tallenna
+            title: Uudelleenohjaus
+          form:
+            title: Uudelleenohjaus
+          index:
+            no_records_html: <p>Ei yhtään uudelleenohjausta.</p> <p>Aloita
+              lisäämällä uusi ohjaus "<a href="%{button_link}">%{button_name}</a>"
+              -napista.</p>
+          new:
+            create: Luo
+            title: Uudelleenohjaus
+          update:
+            error: Uudelleenohjauksen päivitys epäonnistui.
+            success: Uudelleenohjauksen päivitys onnistui.
+        titles:
+          redirections: Uudelleenohjaukset
+      menu:
+        redirects: Uudelleenohjaukset

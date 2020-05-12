@@ -1,0 +1,56 @@
+sv:
+  activemodel:
+    attributes:
+      redirection:
+        external: External
+        parameters: Parameters
+        path: Path
+        priority: Priority
+        target: Target
+    errors:
+      models:
+        redirection:
+          attributes:
+            path:
+              invalid_format: 'invalid path format, must start with a forward slash (/) and follow URL path formatting rules'
+            target:
+              invalid_format_local: 'invalid local target format, must start with a forward slash (/) and follow URL path formatting rules'
+              invalid_format_external: 'invalid external target format, must be a full URL such as "https://www.decidim.org/blog"'
+  decidim:
+    redirects:
+      admin:
+        actions:
+          back: Back
+          cancel: Cancel
+          new_redirection: New redirection
+        models:
+          redirections:
+            fields:
+              path: Path
+              priority: Priority
+              target: Target
+        redirections:
+          create:
+            error: Error creating redirection.
+            success: Redirection successfully created.
+          destroy:
+            success: Redirection successfully deleted.
+          edit:
+            save: Save
+            title: Redirection
+          form:
+            title: Redirection
+          index:
+            no_records_html: <p>No redirections available.</p> <p>Start by adding
+              a redirection from the "<a href="%{button_link}">%{button_name}</a>"
+              button.</p>
+          new:
+            create: Create
+            title: Redirection
+          update:
+            error: Error updating redirection.
+            success: Redirection successfully updated.
+        titles:
+          redirections: Redirections
+      menu:
+        redirects: Redirects
