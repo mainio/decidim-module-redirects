@@ -36,13 +36,14 @@ module Decidim
 
         return @app.call(env) unless redirect
 
-        # TODO: Preserve request parameters in the redirect location
         location = redirect.target
+        query = Rack::Utils.build_query(req.params)
+        query = "?#{query}" unless query.empty?
         unless redirect.external?
           scheme = req.ssl? ? "https" : "http"
           host = organization.host
           host = "#{host}:#{req.port}" unless [80, 443].include?(req.port)
-          location = "#{scheme}://#{host}#{location}"
+          location = "#{scheme}://#{host}#{location}#{query}"
         end
 
         [
