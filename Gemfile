@@ -16,7 +16,7 @@ gem "decidim", DECIDIM_VERSION
 gem "decidim-redirects", path: "."
 
 gem "bootsnap", "~> 1.4"
-gem "puma", "~> 4.3.3"
+gem "puma", "~> 3.12"
 gem "uglifier", "~> 4.1"
 
 group :development, :test do
