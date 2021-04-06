@@ -8,7 +8,7 @@ describe "Admin creates redirection", type: :system do
   let(:priority) { rand(0..1337) }
   let(:path) { "/foo/bar" }
   let(:target) { ::Faker::Internet.url }
-  let(:parameters) { rand(2) == 1 ? "some=thing&foo=bar" : "" }
+  let(:parameters) { "some=thing&foo=bar" }
 
   before do
     switch_to_host(organization.host)

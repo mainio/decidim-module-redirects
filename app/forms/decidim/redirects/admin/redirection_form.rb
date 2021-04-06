@@ -41,7 +41,7 @@ module Decidim
         end
 
         def check_parameters_format
-          return if parameters.empty?
+          return if !parameters || parameters.empty?
           return if parameters =~ /^(\w+=\w+){1}(&\w+=\w+)*/
 
           errors.add(:parameters, :invalid_format_parameters)

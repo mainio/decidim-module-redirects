@@ -4,7 +4,7 @@ FactoryBot.define do
   factory :redirection, class: "Decidim::Redirects::Redirection" do
     priority { rand(1..100) }
     path { "/pages/terms-and-conditions" }
-    parameters { { "foo": "bar" } }
+    parameters { nil }
     target { ::Faker::Internet.url }
     external { true }
   end
