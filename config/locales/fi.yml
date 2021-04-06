@@ -11,6 +11,8 @@ fi:
       models:
         redirection:
           attributes:
+            parameters:
+              invalid_format_parameters: 'vihreellinen parametrimuoto, tulee olla kuten avain=arvo&avain2=arvo2'
             path:
               invalid_format: 'virheellinen polun muoto, polun tulee alkaa kauttaviivalla (/) ja sen tulee seurata URL-osoitteille määrättyjä muotovaatimuksia'
             target:

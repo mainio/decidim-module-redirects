@@ -46,8 +46,16 @@ describe Decidim::Redirects::Admin::RedirectionForm do
   context "when from model" do
     subject { described_class.from_model(redirection) }
 
-    let(:redirection) { create(:redirection, organization: organization) }
+    context "when everything is OK" do
+      let(:redirection) { create(:redirection, organization: organization) }
 
-    it { is_expected.to be_valid }
+      it { is_expected.to be_valid }
+    end
+
+    context "when parameters are invalid" do
+      let(:redirection) { create(:redirection, parameters: "test", organization: organization) }
+
+      it { is_expected.not_to be_valid }
+    end
   end
 end
