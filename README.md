@@ -1,5 +1,8 @@
 # Decidim::Redirects
 
+[![Build Status](https://github.com/mainio/decidim-module-redirects/actions/workflows/ci_redirects.yml/badge.svg)](https://github.com/mainio/decidim-module-redirects/actions)
+[![codecov](https://codecov.io/gh/mainio/decidim-module-redirects/branch/master/graph/badge.svg)](https://codecov.io/gh/mainio/decidim-module-redirects)
+
 A [Decidim](https://github.com/decidim/decidim) module to add possibility to
 add redirections to the system. When things are moved or changed in the system,
 it is many times needed to redirect old URLs to new ones.
@@ -29,7 +32,20 @@ To keep the gem up to date, you can use the commands above to also update it.
 
 ## Usage
 
-TBD
+1. Sign in as admin
+2. Go to admin dashboard
+3. Click Redirects from main nav
+4. Fill form
+  - a. Priority (defines order in index view(*))
+  - b. Path (path where redirect activates)
+  - c. Parameters (optional path parameters)
+  - d. External (if target is outside of the current organization)
+  - e. Target (where redirect redirects)
+5. Submit
+6. Navigate to the path you set in 4b.
+7. You should be redirected to the target you set in 4e.
+
+(*) /admin/redirects/redirections
 
 ## Contributing
 

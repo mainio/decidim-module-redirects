@@ -2,7 +2,7 @@
 
 module Decidim
   module Redirects
-    class Redirection < ApplicationRecord
+    class Redirection < Decidim::Redirects::ApplicationRecord
       belongs_to :organization,
                  foreign_key: "decidim_organization_id",
                  class_name: "Decidim::Organization"

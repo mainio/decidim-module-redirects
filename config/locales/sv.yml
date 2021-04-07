@@ -11,6 +11,8 @@ sv:
       models:
         redirection:
           attributes:
+            parameters:
+              invalid_format_parameters: 'invalid parameters, format must be like "key=value&key2=value2"'
             path:
               invalid_format: 'invalid path format, must start with a forward slash (/) and follow URL path formatting rules'
             target:

@@ -15,7 +15,7 @@ module Decidim
         validates :priority, presence: true
         validates :path, presence: true
         validates :target, presence: true
-        validate :check_path_format, :check_target_format
+        validate :check_path_format, :check_target_format, :check_parameters_format
 
         def map_model(model)
           return unless model.parameters.is_a?(Hash)
@@ -38,6 +38,13 @@ module Decidim
           return if path =~ %r{\A(/[^\s]+)+\z}
 
           errors.add(:path, :invalid_format)
+        end
+
+        def check_parameters_format
+          return if !parameters || parameters.empty?
+          return if parameters =~ /^(\w+=\w+){1}(&\w+=\w+)*/
+
+          errors.add(:parameters, :invalid_format_parameters)
         end
 
         def check_target_format
