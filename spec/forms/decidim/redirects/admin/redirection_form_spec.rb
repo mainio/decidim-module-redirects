@@ -52,6 +52,13 @@ describe Decidim::Redirects::Admin::RedirectionForm do
       it { is_expected.to be_valid }
     end
 
+    context "when parameters are hash" do
+      let(:redirection) { create(:redirection, parameters: parameters, organization: organization) }
+      let(:parameters) { { "foo" => "bar", "omg": "lol" } }
+
+      it { is_expected.to be_valid }
+    end
+
     context "when parameters are invalid" do
       let(:redirection) { create(:redirection, parameters: "test", organization: organization) }
 
