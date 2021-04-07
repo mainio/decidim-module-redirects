@@ -35,27 +35,27 @@ module Decidim
         private
 
         def check_path_format
-          return if path =~ %r{\A(/[^\s]+)+\z}
+          return if path&.match? %r{\A(/[^\s]+)+\z}
 
           errors.add(:path, :invalid_format)
         end
 
         def check_parameters_format
-          return if !parameters || parameters.empty?
-          return if parameters =~ /^(\w+=\w+){1}(&\w+=\w+)*/
+          return if parameters.blank?
+          return if parameters.match?(/^(\w+=\w+){1}(&\w+=\w+)*/)
 
           errors.add(:parameters, :invalid_format_parameters)
         end
 
         def check_target_format
           return check_target_format_external if external
-          return if target =~ %r{\A(/[^\s]+)+\z}
+          return if target&.match? %r{\A(/[^\s]+)+\z}
 
           errors.add(:target, :invalid_format_local)
         end
 
         def check_target_format_external
-          return if target =~ %r{\Ahttps?://[^\s/$.?#].[^\s]*\z}
+          return if target&.match? %r{\Ahttps?://[^\s/$.?#].[^\s]*\z}
 
           errors.add(:target, :invalid_format_external)
         end

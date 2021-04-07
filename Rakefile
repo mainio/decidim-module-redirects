@@ -31,10 +31,10 @@ task :development_app do
       "--path",
       "..",
       "--recreate_db",
+      "--seed_db",
       "--demo"
     )
   end
 
   install_module("development_app")
-  seed_db("development_app")
 end

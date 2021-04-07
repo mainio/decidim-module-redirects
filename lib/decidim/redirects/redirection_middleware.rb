@@ -14,6 +14,7 @@ module Decidim
         @app = app
       end
 
+      # rubocop:disable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
       def call(env)
         organization = env["decidim.current_organization"]
         return @app.call(env) unless organization
@@ -56,6 +57,7 @@ module Decidim
           []
         ]
       end
+      # rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
     end
   end
 end

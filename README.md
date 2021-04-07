@@ -38,7 +38,7 @@ To keep the gem up to date, you can use the commands above to also update it.
 4. Fill form
   - a. Priority (defines order in index view(*))
   - b. Path (path where redirect activates)
-  - c. Parameters (optional path parameters)
+  - c. Parameters (optional path parameters, e.g. key=value&foo=bar)
   - d. External (if target is outside of the current organization)
   - e. Target (where redirect redirects)
 5. Submit
