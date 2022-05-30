@@ -23,14 +23,13 @@ module Decidim
 
       initializer "decidim_redirects.admin_menu" do
         Decidim.menu :admin_menu do |menu|
-          menu.item(
-            I18n.t("menu.redirects", scope: "decidim.redirects"),
-            decidim_admin_redirects.redirections_path,
-            icon_name: "action-redo",
-            position: 4.1,
-            active: :inclusive,
-            if: allowed_to?(:update, :organization, organization: current_organization)
-          )
+          menu.add_item :redirects,
+                        I18n.t("menu.redirects", scope: "decidim.redirects"),
+                        decidim_admin_redirects.redirections_path,
+                        icon_name: "action-redo",
+                        position: 4.1,
+                        active: :inclusive,
+                        if: allowed_to?(:update, :organization, organization: current_organization)
         end
       end
     end
