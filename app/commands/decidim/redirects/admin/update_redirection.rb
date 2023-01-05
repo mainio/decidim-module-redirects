@@ -5,7 +5,7 @@ module Decidim
     module Admin
       # This command is executed when the user changes a redirection from the
       # admin panel.
-      class UpdateRedirection < Rectify::Command
+      class UpdateRedirection < Decidim::Command
         # Initializes an UpdateRedirection Command.
         #
         # form        - The form from which to get the data.

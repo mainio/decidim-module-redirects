@@ -16,7 +16,7 @@ describe "User gets redirected", type: :system do
     let(:path) { "/account" }
     let(:target) { "/pages/terms-and-conditions" }
     let(:external) { false }
-    let(:parameters) { { "foo": "bar" } }
+    let(:parameters) { { foo: "bar" } }
 
     it "redirects because parameters are correct" do
       visit "#{path}?#{parameters.keys.first}=#{parameters.values.first}"

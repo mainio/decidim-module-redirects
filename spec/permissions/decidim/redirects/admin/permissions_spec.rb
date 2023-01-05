@@ -7,7 +7,7 @@ describe Decidim::Redirects::Admin::Permissions do
 
   let(:organization) { create(:organization) }
   let(:context) { { redirection: create(:redirection, organization: organization) } }
-  let(:permission_action) { Decidim::PermissionAction.new(action) }
+  let(:permission_action) { Decidim::PermissionAction.new(**action) }
 
   context "when user is admin" do
     let(:user) { create(:user, :confirmed, :admin, organization: organization) }
@@ -17,7 +17,7 @@ describe Decidim::Redirects::Admin::Permissions do
         { scope: :admin, action: :read, subject: :redirection }
       end
 
-      it { is_expected.to eq true }
+      it { is_expected.to be true }
     end
 
     describe "read admin dashboard" do
@@ -25,7 +25,7 @@ describe Decidim::Redirects::Admin::Permissions do
         { scope: :admin, action: :read, subject: :admin_dashboard }
       end
 
-      it { is_expected.to eq true }
+      it { is_expected.to be true }
     end
 
     describe "create" do
@@ -33,7 +33,7 @@ describe Decidim::Redirects::Admin::Permissions do
         { scope: :admin, action: :create, subject: :redirection }
       end
 
-      it { is_expected.to eq true }
+      it { is_expected.to be true }
     end
 
     describe "update" do
@@ -41,7 +41,7 @@ describe Decidim::Redirects::Admin::Permissions do
         { scope: :admin, action: :update, subject: :redirection }
       end
 
-      it { is_expected.to eq true }
+      it { is_expected.to be true }
     end
 
     describe "destroy" do
@@ -49,7 +49,7 @@ describe Decidim::Redirects::Admin::Permissions do
         { scope: :admin, action: :destroy, subject: :redirection }
       end
 
-      it { is_expected.to eq true }
+      it { is_expected.to be true }
     end
   end
 
@@ -61,7 +61,7 @@ describe Decidim::Redirects::Admin::Permissions do
         { scope: :admin, action: :read, subject: :redirection }
       end
 
-      it { is_expected.to eq false }
+      it { is_expected.to be false }
     end
 
     describe "read admin dashboard" do
@@ -69,7 +69,7 @@ describe Decidim::Redirects::Admin::Permissions do
         { scope: :admin, action: :read, subject: :admin_dashboard }
       end
 
-      it { is_expected.to eq false }
+      it { is_expected.to be false }
     end
 
     describe "create" do
@@ -77,7 +77,7 @@ describe Decidim::Redirects::Admin::Permissions do
         { scope: :admin, action: :create, subject: :redirection }
       end
 
-      it { is_expected.to eq false }
+      it { is_expected.to be false }
     end
 
     describe "update" do
@@ -85,7 +85,7 @@ describe Decidim::Redirects::Admin::Permissions do
         { scope: :admin, action: :update, subject: :redirection }
       end
 
-      it { is_expected.to eq false }
+      it { is_expected.to be false }
     end
 
     describe "destroy" do
@@ -93,7 +93,7 @@ describe Decidim::Redirects::Admin::Permissions do
         { scope: :admin, action: :destroy, subject: :redirection }
       end
 
-      it { is_expected.to eq false }
+      it { is_expected.to be false }
     end
   end
 end

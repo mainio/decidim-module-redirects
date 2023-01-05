@@ -4,7 +4,7 @@ module Decidim
   module Redirects
     module Admin
       # A command with all the business logic when creating a redirection.
-      class CreateRedirection < Rectify::Command
+      class CreateRedirection < Decidim::Command
         # Public: Initializes the command.
         #
         # form - A form object with the params.

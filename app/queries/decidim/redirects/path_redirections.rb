@@ -3,7 +3,7 @@
 module Decidim
   module Redirects
     # This query class filters redirections given a redirection path.
-    class PathRedirections < Rectify::Query
+    class PathRedirections < Decidim::Query
       def initialize(path)
         @path = path
       end

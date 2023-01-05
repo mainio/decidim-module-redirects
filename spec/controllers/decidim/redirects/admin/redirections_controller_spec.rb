@@ -6,8 +6,8 @@ describe Decidim::Redirects::Admin::RedirectionsController, type: :controller do
   routes { Decidim::Redirects::AdminEngine.routes }
 
   let(:user) { create(:user, :admin, :confirmed) }
-  let(:params) { { "redirection": redirection } }
-  let(:redirection) { { "priority": priority, "path": path, "parameters": parameters, "external": external, "target": target } }
+  let(:params) { { redirection: redirection } }
+  let(:redirection) { { priority: priority, path: path, parameters: parameters, external: external, target: target } }
   let(:priority) { rand(1..1000) }
   let(:path) { "/pages/terms-and-conditions" }
   let(:parameters) { "" }
@@ -40,7 +40,7 @@ describe Decidim::Redirects::Admin::RedirectionsController, type: :controller do
 
     describe "PATCH update" do
       let(:params) { { redirection: updated_redirection, id: redirection.id } }
-      let(:updated_redirection) { { "priority": updated_priority, "path": updated_path, "parameters": updated_parameters, "external": updated_external, "target": updated_target } }
+      let(:updated_redirection) { { priority: updated_priority, path: updated_path, parameters: updated_parameters, external: updated_external, target: updated_target } }
       let(:updated_priority) { rand(1..1000) }
       let(:updated_path) { "/updated/path" }
       let(:updated_parameters) { "very=nice&updated=are" }
@@ -52,7 +52,7 @@ describe Decidim::Redirects::Admin::RedirectionsController, type: :controller do
         expect(Decidim::Redirects::Redirection.last.priority).to eq(updated_priority)
         expect(Decidim::Redirects::Redirection.last.path).to eq(updated_path)
         expect(Decidim::Redirects::Redirection.last.parameters).to eq("very" => "nice", "updated" => "are")
-        expect(Decidim::Redirects::Redirection.last.external).to eq(false)
+        expect(Decidim::Redirects::Redirection.last.external).to be(false)
         expect(Decidim::Redirects::Redirection.last.target).to eq(updated_target)
       end
 
@@ -76,7 +76,7 @@ describe Decidim::Redirects::Admin::RedirectionsController, type: :controller do
       it "destroys redirection" do
         expect do
           delete :destroy, params: params
-        end.to change { Decidim::Redirects::Redirection.count }.by(-1)
+        end.to change(Decidim::Redirects::Redirection, :count).by(-1)
       end
     end
   end

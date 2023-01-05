@@ -6,8 +6,8 @@ describe Decidim::Redirects::Admin::RedirectionForm do
   subject { described_class.from_params(params, current_organization: organization) }
 
   let(:organization) { create(:organization) }
-  let(:params) { { "redirection": redirection } }
-  let(:redirection) { { "priority": priority, "path": path, "parameters": parameters, "external": external, "target": target } }
+  let(:params) { { redirection: redirection } }
+  let(:redirection) { { priority: priority, path: path, parameters: parameters, external: external, target: target } }
   let(:priority) { 6 }
   let(:path) { "/pages/terms-and-conditions" }
   let(:parameters) { "" }
@@ -54,7 +54,7 @@ describe Decidim::Redirects::Admin::RedirectionForm do
 
     context "when parameters are hash" do
       let(:redirection) { create(:redirection, parameters: parameters, organization: organization) }
-      let(:parameters) { { "foo" => "bar", "omg": "lol" } }
+      let(:parameters) { { "foo" => "bar", omg: "lol" } }
 
       it { is_expected.to be_valid }
     end

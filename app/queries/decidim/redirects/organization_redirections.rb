@@ -3,7 +3,7 @@
 module Decidim
   module Redirects
     # This query class filters all redirections in an organization.
-    class OrganizationRedirections < Rectify::Query
+    class OrganizationRedirections < Decidim::Query
       def initialize(organization)
         @organization = organization
       end

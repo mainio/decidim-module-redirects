@@ -10,7 +10,7 @@ base_path = ""
 base_path = "../" if File.basename(__dir__) == "development_app"
 require_relative "#{base_path}lib/decidim/redirects/version"
 
-DECIDIM_VERSION = Decidim::Redirects::DECIDIM_VERSION
+DECIDIM_VERSION = Decidim::Redirects.decidim_version
 # DECIDIM_VERSION = { github: "decidim/decidim", branch: "develop" }.freeze
 
 gem "decidim", DECIDIM_VERSION
