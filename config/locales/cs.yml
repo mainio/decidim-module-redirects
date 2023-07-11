@@ -16,7 +16,7 @@ cs:
             path:
               invalid_format: 'neplatný formát cesty, musí začínat lomítkem (/) a dodržovat pravidla formátování URL'
             target:
-              invalid_format_local: 'invalid local target format, must start with a forward slash (/) and follow URL path formatting rules'
+              invalid_format_local: 'neplatný formát targetu cesty, musí začínat lomítkem (/) a dodržovat pravidla formátování URL'
               invalid_format_external: 'neplatný cílový formát, musí být kompletní URL jako "https://www.decidim.org/blog"'
   decidim:
     redirects:
@@ -45,12 +45,12 @@ cs:
           index:
             no_records_html: <p>Žádné přesměrování není k dispozici.</p> <p>Začněte přidáním tlačítka "<a href="%{button_link}">%{button_name}</a>".</p>
           new:
-            create: Create
-            title: Redirection
+            create: Vytvořit
+            title: Přesměrování
           update:
-            error: Error updating redirection.
-            success: Redirection successfully updated.
+            error: Chyba při aktualizaci přesměrování.
+            success: Přesměrování bylo úspěšně aktualizováno.
         titles:
-          redirections: Redirections
+          redirections: Přesměrování
       menu:
-        redirects: Redirects
+        redirects: Přesměrování
