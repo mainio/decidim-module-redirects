@@ -2,48 +2,48 @@ cs:
   activemodel:
     attributes:
       redirection:
-        external: External
-        parameters: Parameters
-        path: Path
-        priority: Priority
-        target: Target
+        external: Externí
+        parameters: Paramtery
+        path: Cesta
+        priority: Priorita
+        target: Cíl
     errors:
       models:
         redirection:
           attributes:
             parameters:
-              invalid_format_parameters: 'invalid parameters, format must be like "key=value&key2=value2"'
+              invalid_format_parameters: 'neplatné parametry, formát musí být jako "key=value&key2=value2"'
             path:
-              invalid_format: 'invalid path format, must start with a forward slash (/) and follow URL path formatting rules'
+              invalid_format: 'neplatný formát cesty, musí začínat lomítkem (/) a dodržovat pravidla formátování URL'
             target:
               invalid_format_local: 'invalid local target format, must start with a forward slash (/) and follow URL path formatting rules'
-              invalid_format_external: 'invalid external target format, must be a full URL such as "https://www.decidim.org/blog"'
+              invalid_format_external: 'neplatný cílový formát, musí být kompletní URL jako "https://www.decidim.org/blog"'
   decidim:
     redirects:
       admin:
         actions:
-          back: Back
-          cancel: Cancel
-          new_redirection: New redirection
+          back: Zpět
+          cancel: Zrušit
+          new_redirection: Nové přesměrování
         models:
           redirections:
             fields:
-              path: Path
-              priority: Priority
-              target: Target
+              path: Cesta
+              priority: Priorita
+              target: Cíl
         redirections:
           create:
-            error: Error creating redirection.
-            success: Redirection successfully created.
+            error: Chyba při vytváření přesměrování.
+            success: Přesměrování bylo úspěšně vytvořeno.
           destroy:
-            success: Redirection successfully deleted.
+            success: Přesměrování bylo úspěšně odstraněno.
           edit:
-            save: Save
-            title: Redirection
+            save: Uložit
+            title: Přesměrování
           form:
-            title: Redirection
+            title: Přesměrování
           index:
-            no_records_html: <p>No redirections available.</p> <p>Start by adding a redirection from the "<a href="%{button_link}">%{button_name}</a>" button.</p>
+            no_records_html: <p>Žádné přesměrování není k dispozici.</p> <p>Začněte přidáním tlačítka "<a href="%{button_link}">%{button_name}</a>".</p>
           new:
             create: Create
             title: Redirection
