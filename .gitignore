@@ -10,6 +10,9 @@
 # rspec failure tracking
 .rspec-failures
 
+# Node
+/node_modules/
+
 # rbenv environment variables
 .rbenv-vars
 
