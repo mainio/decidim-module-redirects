@@ -18,7 +18,4 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: mainio/gha-decidim-module/lint@main
-        with:
-          eslint: true
-          stylelint: true
 
