@@ -8,7 +8,7 @@ class CreateDecidimRedirectsRedirections < ActiveRecord::Migration[5.2]
       t.string :path, null: false
       t.jsonb :parameters
       t.text :target, null: false
-      t.boolean :external, default: false
+      t.boolean :external, null: false, default: false
     end
 
     add_index :decidim_redirects_redirections, :priority

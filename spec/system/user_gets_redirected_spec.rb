@@ -2,8 +2,8 @@
 
 require "spec_helper"
 
-describe "User gets redirected", type: :system do
-  let(:organization) { create :organization }
+describe "Redirect" do
+  let(:organization) { create(:organization) }
   let(:user) { create(:user, :confirmed, organization: organization) }
 
   before do

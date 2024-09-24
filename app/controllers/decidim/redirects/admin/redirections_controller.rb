@@ -21,6 +21,11 @@ module Decidim
           )
         end
 
+        def edit
+          enforce_permission_to :update, :redirection, redirection: redirection
+          @form = form(RedirectionForm).from_model(redirection)
+        end
+
         def create
           enforce_permission_to :create, :redirection
           @form = form(RedirectionForm).from_params(
@@ -39,11 +44,6 @@ module Decidim
               render action: "new"
             end
           end
-        end
-
-        def edit
-          enforce_permission_to :update, :redirection, redirection: redirection
-          @form = form(RedirectionForm).from_model(redirection)
         end
 
         def update

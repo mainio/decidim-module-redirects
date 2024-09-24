@@ -5,7 +5,7 @@ FactoryBot.define do
     priority { rand(1..100) }
     path { "/pages/terms-and-conditions" }
     parameters { nil }
-    target { ::Faker::Internet.url }
+    target { Faker::Internet.url }
     external { true }
   end
 end

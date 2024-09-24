@@ -19,13 +19,13 @@ describe Decidim::Redirects::Admin::RedirectionForm do
   end
 
   context "when path is invalid" do
-    let(:path) { ::Faker::Hacker.verb }
+    let(:path) { Faker::Hacker.verb }
 
     it { is_expected.not_to be_valid }
   end
 
   context "when target is invalid" do
-    let(:target) { ::Faker::Hacker.adjective }
+    let(:target) { Faker::Hacker.adjective }
 
     it { is_expected.not_to be_valid }
   end
@@ -38,7 +38,7 @@ describe Decidim::Redirects::Admin::RedirectionForm do
   end
 
   context "when target is external but external isnt set" do
-    let(:target) { ::Faker::Internet.url }
+    let(:target) { Faker::Internet.url }
 
     it { is_expected.not_to be_valid }
   end

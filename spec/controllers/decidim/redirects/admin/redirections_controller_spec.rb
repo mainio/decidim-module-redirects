@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe Decidim::Redirects::Admin::RedirectionsController, type: :controller do
+describe Decidim::Redirects::Admin::RedirectionsController do
   routes { Decidim::Redirects::AdminEngine.routes }
 
   let(:user) { create(:user, :admin, :confirmed) }
