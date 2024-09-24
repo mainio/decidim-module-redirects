@@ -21,12 +21,14 @@ module Decidim
         end
       end
 
+      Decidim.icons.register(name: "arrow-go-forward-line", icon: "arrow-go-forward-line", category: "system", description: "", engine: :redirects)
+
       initializer "decidim_redirects.admin_menu" do
         Decidim.menu :admin_menu do |menu|
           menu.add_item :redirects,
                         I18n.t("menu.redirects", scope: "decidim.redirects"),
                         decidim_admin_redirects.redirections_path,
-                        icon_name: "action-redo",
+                        icon_name: "arrow-go-forward-line",
                         position: 4.1,
                         active: :inclusive,
                         if: allowed_to?(:update, :organization, organization: current_organization)

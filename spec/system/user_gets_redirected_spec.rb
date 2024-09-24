@@ -14,7 +14,7 @@ describe "User gets redirected", type: :system do
   context "when there is redirection with parameters" do
     let!(:redirection) { create(:redirection, path: path, target: target, parameters: parameters, external: external, organization: organization) }
     let(:path) { "/account" }
-    let(:target) { "/pages/terms-and-conditions" }
+    let(:target) { "/pages/terms-of-service" }
     let(:external) { false }
     let(:parameters) { { foo: "bar" } }
 

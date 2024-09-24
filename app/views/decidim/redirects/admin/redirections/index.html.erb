@@ -1,18 +1,20 @@
+<% add_decidim_page_title(t("titles.redirections", scope: "decidim.redirects.admin")) %>
+
 <div class="card" id="redirections">
-  <div class="card-divider">
-    <h2 class="card-title flex--sbc">
+  <div class="item_show__header item_show__header--with-action-options">
+    <h1 class="item_show__header-title">
       <div>
         <%= t "decidim.redirects.admin.titles.redirections" %>
       </div>
 
-      <div class="flex--cc flex-gap--1">
+      <div class="flex items-center gap-x-4">
         <div id="js-other-actions-wrapper">
           <% if allowed_to? :create, :redirection %>
-            <%= link_to t("actions.new_redirection", scope: "decidim.redirects.admin"), new_redirection_path, class: "button tiny button--simple" %>
+            <%= link_to t("actions.new_redirection", scope: "decidim.redirects.admin"), new_redirection_path, class: "button button__sm button__secondary" %>
           <% end %>
         </div>
       </div>
-    </h2>
+    </h1>
   </div>
   <div class="card-section">
     <% if @redirections.count > 0 %>
@@ -40,11 +42,11 @@
                 <td><%= redirection.priority %></td>
                 <td class="table-list__actions">
                   <% if allowed_to? :update, :redirection, redirection: redirection %>
-                    <%= icon_link_to "pencil", edit_redirection_path(redirection), t("actions.configure", scope: "decidim.admin"), class: "action-icon--new" %>
+                    <%= icon_link_to "pencil-line", edit_redirection_path(redirection), t("actions.configure", scope: "decidim.admin"), class: "action-icon--new" %>
                   <% end %>
 
                   <% if allowed_to? :destroy, :redirection, redirection: redirection %>
-                    <%= icon_link_to "circle-x", redirection_path(redirection), t("actions.destroy", scope: "decidim.admin"), method: :delete, class: "action-icon--remove", data: { confirm: t("actions.confirm_destroy", scope: "decidim.admin") } %>
+                    <%= icon_link_to "delete-bin-line", redirection_path(redirection), t("actions.destroy", scope: "decidim.admin"), method: :delete, class: "action-icon--remove", data: { confirm: t("actions.confirm_destroy", scope: "decidim.admin") } %>
                   <% end %>
                 </td>
               </tr>
