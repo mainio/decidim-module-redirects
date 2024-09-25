@@ -4,7 +4,7 @@ require "spec_helper"
 
 describe "Redirect" do
   let(:organization) { create(:organization) }
-  let(:user) { create(:user, :confirmed, organization: organization) }
+  let(:user) { create(:user, :confirmed, organization:) }
 
   before do
     switch_to_host(organization.host)
@@ -12,7 +12,7 @@ describe "Redirect" do
   end
 
   context "when there is redirection with parameters" do
-    let!(:redirection) { create(:redirection, path: path, target: target, parameters: parameters, external: external, organization: organization) }
+    let!(:redirection) { create(:redirection, path:, target:, parameters:, external:, organization:) }
     let(:path) { "/account" }
     let(:target) { "/pages/terms-of-service" }
     let(:external) { false }

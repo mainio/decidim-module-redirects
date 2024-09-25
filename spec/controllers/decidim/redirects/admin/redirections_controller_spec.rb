@@ -6,8 +6,8 @@ describe Decidim::Redirects::Admin::RedirectionsController do
   routes { Decidim::Redirects::AdminEngine.routes }
 
   let(:user) { create(:user, :admin, :confirmed) }
-  let(:params) { { redirection: redirection } }
-  let(:redirection) { { priority: priority, path: path, parameters: parameters, external: external, target: target } }
+  let(:params) { { redirection: } }
+  let(:redirection) { { priority:, path:, parameters:, external:, target: } }
   let(:priority) { rand(1..1000) }
   let(:path) { "/pages/terms-and-conditions" }
   let(:parameters) { "" }
@@ -21,7 +21,7 @@ describe Decidim::Redirects::Admin::RedirectionsController do
 
   describe "POST create" do
     it "creates redirection" do
-      post :create, params: params
+      post(:create, params:)
       expect(Decidim::Redirects::Redirection.count).to eq(1)
     end
 
@@ -29,7 +29,7 @@ describe Decidim::Redirects::Admin::RedirectionsController do
       let(:parameters) { "foo" }
 
       it "doesnt create redirection" do
-        post :create, params: params
+        post(:create, params:)
         expect(Decidim::Redirects::Redirection.count).to eq(0)
       end
     end
@@ -75,7 +75,7 @@ describe Decidim::Redirects::Admin::RedirectionsController do
 
       it "destroys redirection" do
         expect do
-          delete :destroy, params: params
+          delete :destroy, params:
         end.to change(Decidim::Redirects::Redirection, :count).by(-1)
       end
     end

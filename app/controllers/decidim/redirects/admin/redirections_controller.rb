@@ -22,7 +22,7 @@ module Decidim
         end
 
         def edit
-          enforce_permission_to :update, :redirection, redirection: redirection
+          enforce_permission_to(:update, :redirection, redirection:)
           @form = form(RedirectionForm).from_model(redirection)
         end
 
@@ -30,7 +30,7 @@ module Decidim
           enforce_permission_to :create, :redirection
           @form = form(RedirectionForm).from_params(
             params,
-            current_organization: current_organization
+            current_organization:
           )
 
           CreateRedirection.call(@form) do
@@ -47,10 +47,10 @@ module Decidim
         end
 
         def update
-          enforce_permission_to :update, :redirection, redirection: redirection
+          enforce_permission_to(:update, :redirection, redirection:)
           @form = form(RedirectionForm).from_params(
             params,
-            current_organization: current_organization
+            current_organization:
           )
 
           UpdateRedirection.call(@form, redirection) do
@@ -67,7 +67,7 @@ module Decidim
         end
 
         def destroy
-          enforce_permission_to :destroy, :redirection, redirection: redirection
+          enforce_permission_to(:destroy, :redirection, redirection:)
           redirection.destroy!
 
           flash[:notice] = I18n.t("redirections.destroy.success", scope: "decidim.redirects.admin")

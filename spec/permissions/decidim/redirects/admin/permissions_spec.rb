@@ -6,11 +6,11 @@ describe Decidim::Redirects::Admin::Permissions do
   subject { described_class.new(user, permission_action, context).permissions.allowed? }
 
   let(:organization) { create(:organization) }
-  let(:context) { { redirection: create(:redirection, organization: organization) } }
+  let(:context) { { redirection: create(:redirection, organization:) } }
   let(:permission_action) { Decidim::PermissionAction.new(**action) }
 
   context "when user is admin" do
-    let(:user) { create(:user, :confirmed, :admin, organization: organization) }
+    let(:user) { create(:user, :confirmed, :admin, organization:) }
 
     describe "read" do
       let(:action) do
@@ -54,7 +54,7 @@ describe Decidim::Redirects::Admin::Permissions do
   end
 
   context "when user is not admin" do
-    let(:user) { create(:user, :confirmed, organization: organization) }
+    let(:user) { create(:user, :confirmed, organization:) }
 
     describe "read" do
       let(:action) do

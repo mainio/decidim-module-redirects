@@ -4,7 +4,7 @@ require "spec_helper"
 
 describe "Redirection" do
   let(:organization) { create(:organization) }
-  let(:user) { create(:user, :admin, :confirmed, organization: organization) }
+  let(:user) { create(:user, :admin, :confirmed, organization:) }
   let(:priority) { rand(0..1337) }
   let(:path) { "/foo/bar" }
   let(:target) { Faker::Internet.url }
@@ -17,7 +17,7 @@ describe "Redirection" do
   end
 
   describe "redirects index" do
-    let!(:redirection) { create(:redirection, organization: organization) }
+    let!(:redirection) { create(:redirection, organization:) }
 
     it "shows redirection" do
       visit current_path
@@ -67,7 +67,7 @@ describe "Redirection" do
   end
 
   describe "edit redirection" do
-    let!(:redirection) { create(:redirection, organization: organization) }
+    let!(:redirection) { create(:redirection, organization:) }
 
     it "edits redirection" do
       visit current_path

@@ -7,7 +7,7 @@ require "decidim/redirects/version"
 Gem::Specification.new do |spec|
   spec.name = "decidim-redirects"
   spec.version = Decidim::Redirects.version
-  spec.required_ruby_version = ">= 3.0"
+  spec.required_ruby_version = ">= 3.1"
   spec.authors = ["Antti Hukkanen"]
   spec.email = ["antti.hukkanen@mainiotech.fi"]
 
