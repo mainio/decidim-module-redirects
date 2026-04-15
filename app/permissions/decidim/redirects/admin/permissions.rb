@@ -30,7 +30,7 @@ module Decidim
         end
 
         def allowed_redirection_action?
-          return unless permission_action.subject == :redirection
+          return false unless permission_action.subject == :redirection
 
           case permission_action.action
           when :create, :read
