@@ -2,55 +2,55 @@ sv:
   activemodel:
     attributes:
       redirection:
-        external: External
-        parameters: Parameters
-        path: Path
-        priority: Priority
-        target: Target
+        external: Extern
+        parameters: Parametrar
+        path: Sökväg
+        priority: Prioritet
+        target: Mål
     errors:
       models:
         redirection:
           attributes:
             parameters:
-              invalid_format_parameters: 'invalid parameters, format must be like "key=value&key2=value2"'
+              invalid_format_parameters: 'ogiltiga parametrar, formatet måste vara som "key=value&key2=value2"'
             path:
-              invalid_format: 'invalid path format, must start with a forward slash (/) and follow URL path formatting rules'
+              invalid_format: 'ogiltigt sökvägs-format, måste börja med ett framåtriktat snedstreck (/) och följa URL-sökvägs-formateringsregler'
             target:
-              invalid_format_local: 'invalid local target format, must start with a forward slash (/) and follow URL path formatting rules'
-              invalid_format_external: 'invalid external target format, must be a full URL such as "https://www.decidim.org/blog"'
+              invalid_format_local: 'ogiltigt lokalt målformat, måste börja med ett framåtriktat snedstreck (/) och följa URL-sökvägs formateringsregler'
+              invalid_format_external: 'ogiltigt externt målformat, måste vara en fullständig URL som "https://www.decidim.org/blog"'
   decidim:
     redirects:
       admin:
         actions:
-          back: Back
-          cancel: Cancel
-          new_redirection: New redirection
+          back: Tillbaka
+          cancel: Avbryt
+          new_redirection: Ny omdirigering
         models:
           redirections:
             fields:
-              path: Path
-              priority: Priority
-              target: Target
+              path: Sökväg
+              priority: Prioritet
+              target: Mål
         redirections:
           create:
-            error: Error creating redirection.
-            success: Redirection successfully created.
+            error: Fel vid skapande av omdirigering.
+            success: Omdirigera har skapats.
           destroy:
-            success: Redirection successfully deleted.
+            success: Omdirigera har skapats.
           edit:
-            save: Save
-            title: Redirection
+            save: Spara
+            title: Omdirigering
           form:
-            title: Redirection
+            title: Omdirigering
           index:
-            no_records_html: <p>No redirections available.</p> <p>Start by adding a redirection from the "<a href="%{button_link}">%{button_name}</a>" button.</p>
+            no_records_html: <p>Inga omdirigeringar tillgängliga.</p> <p>Börja med att lägga till en omdirigering från "<a href="%{button_link}">%{button_name}</a>"-knappen.</p>
           new:
-            create: Create
-            title: Redirection
+            create: Skapa
+            title: Omdirigering
           update:
-            error: Error updating redirection.
-            success: Redirection successfully updated.
+            error: Fel vid skapande av omdirigering.
+            success: Omdirigera har skapats.
         titles:
-          redirections: Redirections
+          redirections: Omdirigeringar
       menu:
-        redirects: Redirects
+        redirects: Omdirigering
