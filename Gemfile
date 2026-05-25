@@ -18,7 +18,7 @@ gem "decidim-redirects", path: "."
 
 gem "bootsnap", "~> 1.4"
 
-gem "puma", ">= 5.0.0"
+gem "puma", ">= 6.4.2"
 gem "uglifier", "~> 4.1"
 
 group :development, :test do
@@ -31,7 +31,7 @@ group :development, :test do
 end
 
 group :development do
-  gem "faker", "3.2"
+  gem "faker", "~> 3.2"
   gem "letter_opener_web", "~> 1.4"
   gem "listen", "~> 3.1"
   gem "web-console", "~> 3.7"
