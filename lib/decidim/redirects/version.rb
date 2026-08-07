@@ -3,11 +3,11 @@
 module Decidim
   module Redirects
     def self.decidim_version
-      "~> 0.30.0"
+      "~> 0.31.0"
     end
 
     def self.version
-      "0.30.0"
+      "0.31.0"
     end
   end
 end
