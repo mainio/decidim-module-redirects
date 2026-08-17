@@ -17,7 +17,11 @@ module Decidim
 
       initializer "decidim_redirects.admin_mount_routes" do
         Decidim::Core::Engine.routes do
-          mount Decidim::Redirects::AdminEngine, at: "/admin/redirects", as: "decidim_admin_redirects"
+          extend Decidim::Routes::LocaleRedirects
+
+          scope "/:locale", **locale_scope_options do
+            mount Decidim::Redirects::AdminEngine, at: "/admin/redirects", as: "decidim_admin_redirects"
+          end
         end
       end
 

@@ -10,7 +10,7 @@ module Decidim
 
       def query
         q = Decidim::Redirects::Redirection.where(path: @path)
-        q.order("priority, path")
+        q.order(:priority, :path)
       end
     end
   end
