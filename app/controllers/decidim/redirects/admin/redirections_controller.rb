@@ -84,7 +84,7 @@ module Decidim
         alias collection redirections
 
         def redirection
-          @redirection ||= Decidim::Redirects::Redirection.find(params[:id])
+          @redirection ||= Decidim::Redirects::Redirection.where(organization: current_organization).find(params[:id])
         end
       end
     end
